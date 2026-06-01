@@ -1,0 +1,24 @@
+services:
+  - type: web
+    runtime: python
+    name: edge-backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: TUTOR_MODEL_FREE
+        value: "deepseek/deepseek-chat-v3-0324:free"
+      - key: TUTOR_MODEL_PRO
+        value: "deepseek/deepseek-chat-v3-0324:free"
