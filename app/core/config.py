@@ -8,11 +8,14 @@ class Settings(BaseSettings):
 
     anthropic_api_key: str = ""
     openai_api_key: str = ""
+    openrouter_api_key: str = ""
 
-    tutor_model_free: str = "claude-haiku-4-5"
-    tutor_model_pro: str = "claude-sonnet-4-6"
+    tutor_model_free: str = "deepseek/deepseek-chat-v3-0324:free"
+    tutor_model_pro: str = "deepseek/deepseek-chat-v3-0324:free"
 
-    eval_model: str = "claude-haiku-4-5-20251001"
+    eval_model: str = "deepseek/deepseek-chat-v3-0324:free"
+
+    cors_origins: str = "*"
 
     tutor_daily_limit_free: int = 5
     tutor_daily_limit_pro: int = 500
